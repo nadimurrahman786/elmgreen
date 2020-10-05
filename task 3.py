@@ -1,4 +1,4 @@
-# get password
+# get password from user
 password = input("type in your password")
 
 # Check length of password

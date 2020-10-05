@@ -7,9 +7,9 @@ new_word = ""
 
 # loop through the word
 while len(word) > 0:
-    # add last letter to new work
+    # add last letter to new word
     new_word = new_word + word[-1]
-    # shorten the word by taking of last letter
+    # shorten the original word by taking off the last letter
     word = word[:-1]
 # end while
 

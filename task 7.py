@@ -1,7 +1,6 @@
 
-# Get an integer
+# Get an integer from the user
 my_num = int(input("Type in an integer"))
-
 
 # use division to get hundreds
 hundreds = my_num //100
