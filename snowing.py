@@ -34,15 +34,19 @@ class Snow(pygame.sprite.Sprite):
         # Set the position of the sprite  
         self.rect = self.image.get_rect()  
         self.rect.x = random.randrange(0, 600)  
-        self.rect.y = random.randrange(0, 400) 
+        self.rect.y = random.randrange(0,400) - 350 
         # Set speed of the sprite  
         self.speed = speed  
 
     #End Procedure 
 
     # Class update function - runs for each pass through the game loop  
-    def update(self):  
-      self.rect.y = self.rect.y + self.speed
+    def update(self):
+        if self.rect.y > 490:
+            self.rect.y = -20
+            self.rect.x = random.randrange(0, 600)
+        else:
+            self.rect.y = self.rect.y + self.speed
  
 #End Class
 
@@ -54,7 +58,7 @@ all_sprites_group = pygame.sprite.Group()
 # Create the snowflakes  
 number_of_flakes = 50 # we are creating 50 snowflakes
 for x in range (number_of_flakes):  
-    my_snow = Snow(WHITE, 5, 5,1)  # snowflakes are white with size 5 by 5 px
+    my_snow = Snow(BLUE, 5, 5,3)  # snowflakes are white with size 5 by 5 px
     snow_group.add (my_snow) # adds the new snowflake to the group of snowflakes
     all_sprites_group.add (my_snow) # adds it to the group of all Sprites
 #Next x 
